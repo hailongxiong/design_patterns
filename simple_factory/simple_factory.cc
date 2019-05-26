@@ -55,7 +55,7 @@ class div : public operation
 class factory
 {
     public:
-        operation* getOperation(string opera)
+        static operation* getOperation(string opera)
         {
             operation *op = NULL;
             if (opera == "+")
