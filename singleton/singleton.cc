@@ -37,7 +37,7 @@ class MulThreadSingleton
         {
             if (instance == nullptr)
             {
-                mutex mut;
+                static mutex mut;
                 mut.lock();
                 instance = new MulThreadSingleton();
                 mut.unlock();
