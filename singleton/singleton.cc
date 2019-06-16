@@ -24,7 +24,6 @@ class Singleton
 
 Singleton* Singleton::instance = new Singleton();
 
-mutex mut;
 class MulThreadSingleton
 {
     private:
@@ -38,6 +37,7 @@ class MulThreadSingleton
         {
             if (instance == nullptr)
             {
+                mutex mut;
                 mut.lock();
                 instance = new MulThreadSingleton();
                 mut.unlock();
